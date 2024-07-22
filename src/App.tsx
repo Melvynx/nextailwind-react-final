@@ -1,3 +1,4 @@
+import { DashboardContent } from "./dashboard/DashboardContent";
 import { DashboardContentHeader } from "./dashboard/DashboardContentHeader";
 import { DashboardHeader } from "./dashboard/DashboardHeader";
 
@@ -6,6 +7,7 @@ export const App = () => {
     <div className="dark min-h-full bg-background text-foreground">
       <DashboardHeader />
       <DashboardContentHeader />
+      <DashboardContent />
     </div>
   );
 };

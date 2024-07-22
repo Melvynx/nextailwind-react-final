@@ -1,12 +1,18 @@
 import { PropsWithChildren } from "react";
+import { cn } from "../cn";
 
 export type AvatarProps = {
   fallback?: string;
 };
 
-export const Avatar = (props: PropsWithChildren) => {
+export const Avatar = (props: PropsWithChildren & { className?: string }) => {
   return (
-    <div className="flex size-10 items-center justify-center overflow-hidden rounded-full border border-border">
+    <div
+      className={cn(
+        "flex size-10 items-center justify-center overflow-hidden rounded-full border border-border",
+        props.className
+      )}
+    >
       {props.children}
     </div>
   );
