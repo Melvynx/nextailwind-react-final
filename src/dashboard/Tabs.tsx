@@ -1,4 +1,5 @@
 import { PropsWithChildren } from "react";
+import { cn } from "../cn";
 
 export const Tabs = (props: PropsWithChildren) => {
   return (
@@ -11,13 +12,12 @@ export const Tabs = (props: PropsWithChildren) => {
 export const Tab = (props: PropsWithChildren & { isActive?: boolean }) => {
   return (
     <button
-      className={
-        "px-4 py-0.5 rounded-md text-lg" +
-        " " +
-        (props.isActive
+      className={cn(
+        "px-4 py-0.5 rounded-md text-lg",
+        props.isActive
           ? "bg-background text-foreground"
-          : "text-muted-foreground")
-      }
+          : "text-muted-foreground"
+      )}
     >
       {props.children}
     </button>
