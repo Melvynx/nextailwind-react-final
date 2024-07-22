@@ -17,6 +17,7 @@ export default [
     rules: {
       "react/react-in-jsx-scope": 0,
       "react/no-unescaped-entities": 0,
+      "react/prop-types": 0,
     },
   },
   {

@@ -1,17 +1,43 @@
+import { ModeToggle } from "@/components/mode-toggle";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ComponentPropsWithoutRef } from "react";
-import { Avatar, AvatarImage } from "./Avatar";
-import { Input } from "./Input";
-import { Select } from "./Select";
 
 export const DashboardHeader = () => {
   return (
     <header className="border-b border-border py-4">
       <div className="m-auto flex max-w-6xl items-center gap-4 px-4">
-        <Select>
-          <div className="flex items-center gap-4">
-            <div className="size-5 rounded-full bg-gradient-to-r from-zinc-800 to-zinc-200"></div>
-            <p>Alicia Roch</p>
-          </div>
+        <Select value="alicia">
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Theme" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="alicia">
+              <div className="flex items-center gap-4">
+                <div className="size-5 rounded-full bg-gradient-to-r from-zinc-800 to-zinc-200"></div>
+                <p className="line-clamp-1">Alicia Roch</p>
+              </div>
+            </SelectItem>
+            <SelectItem value="dark">
+              <div className="flex items-center gap-4">
+                <div className="size-5 rounded-full bg-gradient-to-r from-blue-800 to-purple-200"></div>
+                <p>Mickael</p>
+              </div>
+            </SelectItem>
+            <SelectItem value="system">
+              <div className="flex items-center gap-4">
+                <div className="size-5 rounded-full bg-gradient-to-r from-red-800 to-orange-200"></div>
+                <p>Jean Jack</p>
+              </div>
+            </SelectItem>
+          </SelectContent>
         </Select>
         <DashboardLink href="#" isCurrent>
           Overview
@@ -20,10 +46,11 @@ export const DashboardHeader = () => {
         <DashboardLink href="#">Products</DashboardLink>
         <DashboardLink href="#">Settings</DashboardLink>
         <div className="flex-1" />
-        <Input placeholder="Search..." />
+        <Input className="w-[200px]" placeholder="Search..." />
         <Avatar>
           <AvatarImage src="https://ui.shadcn.com/avatars/01.png" />
         </Avatar>
+        <ModeToggle />
       </div>
     </header>
   );

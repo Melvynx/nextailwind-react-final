@@ -1,6 +1,6 @@
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity, CreditCard, DollarSign, User } from "lucide-react";
-import { Avatar, AvatarFallback } from "./Avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "./Card";
 
 export const DashboardContent = () => {
   return (

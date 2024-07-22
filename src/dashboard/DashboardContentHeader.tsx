@@ -1,7 +1,6 @@
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CalendarDays } from "lucide-react";
-import { Button } from "./Button";
-import { Select } from "./Select";
-import { Tab, Tabs } from "./Tabs";
 
 export const DashboardContentHeader = () => {
   return (
@@ -9,19 +8,21 @@ export const DashboardContentHeader = () => {
       <div className="flex w-full items-center gap-4">
         <h1 className="text-4xl font-bold">Dashboard</h1>
         <div className="flex-1" />
-        <Select>
+        <Button variant="outline">
           <div className="flex items-center gap-2">
             <CalendarDays size={16} />
             <span>Jan 20, 2023 - Feb 09, 2023</span>
           </div>
-        </Select>
+        </Button>
 
-        <Button>Download</Button>
+        <Button variant="invert">Download</Button>
       </div>
-      <Tabs>
-        <Tab isActive>Overview</Tab>
-        <Tab>Analytics</Tab>
-        <Tab>Reports</Tab>
+      <Tabs value="overview">
+        <TabsList>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="analytics">Analytics</TabsTrigger>
+          <TabsTrigger value="reports">Reports</TabsTrigger>
+        </TabsList>
       </Tabs>
     </div>
   );
