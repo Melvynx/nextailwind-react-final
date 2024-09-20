@@ -9,7 +9,7 @@ export const DashboardContentHeader = () => {
       <div className="flex w-full items-center gap-4">
         <div className="flex flex-col gap-2">
           <Typography variant="h1">Dashboard</Typography>
-          <Typography ref={(ref) => {}} variant="link" href="/">
+          <Typography variant="link" href="/">
             Dashboard
           </Typography>
         </div>
